@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/base :: head"></head>
+<body>
+	<div th:replace="fragments/header_fragment :: header"></div>
+	
+	<main>
+		<!-- Start Hero Section -->
+		<div class="hero">
+			<div class="container">
+				<div class="row justify-content-between">
+					<div class="col-lg-5">
+						<div class="intro-excerpt">
+							<h1>Tu Bodega <span clsas="d-block">virtual en minutos.</span></h1>
+							<p class="mb-4">Si tienes una bodega o minimarket, puedes registrar tu negocio para que muchas personas puedan conocerla..</p>
+							<p><a href="" class="btn btn-secondary me-2">Afiliarme</a><a href="#" class="btn btn-white-outline">Explorar</a></p>
+						</div>
+					</div>
+					<div class="col-lg-7">
+						<div class="hero-img-wrap" style="right:-5%">
+							<img th:src="@{images/banner1.png}" style="max-width:650px;width:100%;" class="img-fluid">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Hero Section -->
+	    
+		<!-- Start Product Section -->
+		<div class="product-section">
+			<div class="container">
+				<div class="row">
+
+					<!-- Start Column 1 -->
+					<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+						<h2 class="mb-4 section-title">Bodegas al alcance de un click.</h2>
+						<p class="mb-4">Si tienes una bodega o minimarket, puedes registrar tu negocio para que muchas personas puedan conocerla. </p>
+						<p><a href="shop.html" class="btn">Afiliarme</a></p>
+					</div> 
+					<!-- End Column 1 -->
+
+					<!-- Start Column 2 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="cart.html">
+							<img src="https://themewagon.github.io/furni/images/product-3.png" class="img-fluid product-thumbnail">
+							<h3 class="product-title">Silla Ergonomica</h3>
+							<strong class="product-price">S/38.00</strong>
+
+							<span class="icon-cross">
+								<img th:src="@{icons/cross.svg}" class="img-fluid">
+							</span>
+						</a>
+					</div> 
+					<!-- End Column 2 -->
+
+					<!-- Start Column 3 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="cart.html">
+							<img src="https://www.pngall.com/wp-content/uploads/2017/03/Oil-Download-PNG.png" style="max-height:300px;" class="img-fluid product-thumbnail">
+							<h3 class="product-title">Aceite Primor</h3>
+							<strong class="product-price">S/7.00</strong>
+
+							<span class="icon-cross">
+								<img th:src="@{icons/cross.svg}" class="img-fluid">
+							</span>
+						</a>
+					</div>
+					<!-- End Column 3 -->
+
+					<!-- Start Column 4 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="cart.html">
+							<img src="https://static.vecteezy.com/system/resources/previews/015/100/020/non_2x/fruit-basket-transparent-background-free-png.png" class="img-fluid product-thumbnail">
+							<h3 class="product-title">Collecion frutas</h3>
+							<strong class="product-price">S/43.00</strong>
+
+							<span class="icon-cross">
+								<img th:src="@{icons/cross.svg}" class="img-fluid">
+							</span>
+						</a>
+					</div>
+					<!-- End Column 4 -->
+
+				</div>
+			</div>
+		</div>
+		<!-- End Product Section -->
+		<div style="height:200px;"></div>
+	</main>
+	<div th:fragment="footer" th:replace="fragments/footer :: footer"></div>
+	<th:block th:include="layouts/base :: scripts"></th:block>
+</body>
+</html>
