@@ -1,6 +1,6 @@
 package com.cibertec.bodegasNet.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "roles")

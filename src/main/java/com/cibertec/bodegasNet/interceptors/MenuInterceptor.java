@@ -1,4 +1,4 @@
-package com.cibertec.interceptors;
+package com.cibertec.bodegasNet.interceptors;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
