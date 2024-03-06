@@ -14,4 +14,22 @@ public class IndexController {
 		model.addAttribute("title", "Página de Inicio");
 		return "index";
 	}
+	
+	@GetMapping("/about")
+	public String showAbout(Model model) {
+		model.addAttribute("title", "Página About");
+		return "about";
+	}
+	
+	@GetMapping("/locations")
+	public String showLocations(Model model) {
+		model.addAttribute("title", "Página Locations");
+		return "locations";
+	}
+	
+	@GetMapping("/contact")
+	public String showContact(Model model) {
+		model.addAttribute("title", "Página Contact");
+		return "contact";
+	}
 }

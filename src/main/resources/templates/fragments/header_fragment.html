@@ -10,17 +10,25 @@
 
 			<div class="collapse navbar-collapse" id="navbarsFurni">
 				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-					<li class="nav-item active">
-						<a class="nav-link" href="index.html">Inicio</a>
+					<li class="nav-item" th:classappend="${currentPage == '' ? 'active' : ''}">
+						<a class="nav-link" href="/">Inicio</a>
 					</li>
-					<li><a class="nav-link" href="shop.html">Tiendas</a></li>
-					<li><a class="nav-link" href="about.html">Sobre Nosotros</a></li>
-					<li><a class="nav-link" href="services.html">Ubicaciones</a></li>
-					<li><a class="nav-link" href="contact.html">Contactanos</a></li>
+					<li class="nav-item" th:classappend="${currentPage == 'stores' ? 'active' : ''}">
+						<a class="nav-link" href="/stores">Tiendas</a>
+					</li>
+					<li class="nav-item" th:classappend="${currentPage == 'about' ? 'active' : ''}">
+						<a class="nav-link" href="/about">Sobre Nosotros</a>
+					</li>
+					<li class="nav-item" th:classappend="${currentPage == 'locations' ? 'active' : ''}">
+						<a class="nav-link" href="/locations">Ubicaciones</a>
+					</li>
+					<li class="nav-item" th:classappend="${currentPage == 'contact' ? 'active' : ''}">
+						<a class="nav-link" href="/contact">Contactanos</a>
+					</li>
 				</ul>
 
 				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-					<li><a class="nav-link" href="#"><img th:src="@{icons/user.svg}"></a></li>
+					<li><a class="nav-link" href="/auth/login"><img th:src="@{icons/user.svg}"></a></li>
 					<li><a class="nav-link" href="cart.html"><img th:src="@{icons/cart.svg}"></a></li>
 				</ul>
 			</div>
