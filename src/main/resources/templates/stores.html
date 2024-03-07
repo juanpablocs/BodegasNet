@@ -4,8 +4,21 @@
 <body>
 	<div th:replace="fragments/header_fragment :: header"></div>
 		
-	<main class="form-signin">
-	  <p>Stores</p>
+	<main class="container main-full">
+	  
+	  <h2 class="section-title">Listado de tiendas</h2>
+	  	<div class="row gy-4">
+	  	
+		    <a th:href="'/stores/'+${merchant.id}" class="col-6 col-md-4" th:each="merchant : ${merchants}">
+				<div class="card text-bg-dark card--store">
+			        <img class="card-img" th:src="'/uploads/'+ ${merchant.image}" />
+			        <div class="card-img-overlay">
+			            <h5 class="card-title" th:text="${merchant.merchantName}"></h5>
+			        </div>
+			    </div>
+			</a>
+
+		</div>
 	</main>	
 
 </body>

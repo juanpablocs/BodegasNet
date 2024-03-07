@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/base :: head"></head>
+<body>
+	<div th:replace="fragments/header_fragment :: header"></div>
+		
+	<main class="container main-full">
+	  
+		<div class="row">
+        <!-- Foto Principal del Producto -->
+        <div class="col-md-6">
+            <img th:src="@{'/uploads/' + ${product.photo}}" class="img-fluid" alt="Product Image">
+        </div>
+
+        <!-- Detalles del Producto -->
+        <div class="col-md-6">
+            <div class="product-details">
+                <h1 class="product-title" th:text="${product.name}">Nombre del Producto</h1>
+                <p class="product-description" th:text="${product.description}">
+                    Descripción extensa del producto...
+                </p>
+                <h2 class="product-price" th:text="'S/'+${product.price}"></h2>
+                <button class="btn btn-primary btn-lg">Comprar</button>
+            </div>
+        </div>
+    </div>
+	</main>	
+
+</body>
+</html>

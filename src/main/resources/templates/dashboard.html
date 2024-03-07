@@ -4,8 +4,97 @@
 <body>
 	<div th:replace="fragments/header_fragment :: header"></div>
 		
-	<main class="form-signin">
-	  <p>Dashboard Protected</p>
+	<main class="container mt-4">
+	  
+		<div th:if="${merchant != null}">
+			<h2 class="section-title" th:text="'Tienda: ' + ${merchant.merchantName}"></h2>
+			<div class="row row-cols-1 row-cols-md-3 g-4">
+				<!-- Sales Card -->
+		        <div class="col">
+		            <div class="card text-white bg-success mb-3">
+		                <div class="card-header">Ventas</div>
+		                <div class="card-body">
+		                    <h5 class="card-title">Total Ventas</h5>
+		                    <p class="card-text" th:text="${totalSales}">$50,000</p>
+		                </div>
+		            </div>
+		        </div>
+		        <!-- Orders Card -->
+		        <div class="col">
+		            <div class="card text-white bg-primary mb-3">
+		                <div class="card-header">Órdenes</div>
+		                <div class="card-body">
+		                    <h5 class="card-title">Total Órdenes</h5>
+		                    <p class="card-text" th:text="${totalOrders}">123</p>
+		                </div>
+		            </div>
+		        </div>
+		        <!-- Products Card -->
+		        <div class="col">
+		            <div class="card text-white bg-info mb-3">
+		                <div class="card-header">Productos</div>
+		                <div class="card-body">
+		                    <h5 class="card-title">Total Productos</h5>
+		                    <p class="card-text" th:text="${totalProducts}">320</p>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+	        
+	        <div class="d-flex justify-content-between align-items-center mb-4 mt-3">
+		        <h2 class="section-title">Productos</h2>
+		        <a href="/dashboard/products/create" class="btn btn-primary">+ Añadir Nuevo</a>
+		    </div>
+		
+		    <table class="table">
+		        <thead class="table-dark">
+		            <tr>
+		                <th width="15%">Foto</th>
+		                <th width="40%">Nombre</th>
+		                <th width="10%">Precio</th>
+		                <th width="20%">Categoría</th>
+		                <th width="15%">Acciones</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <tr th:each="product : ${products}">
+					    <td><img th:src="@{'/uploads/' + ${product.photo}}" alt="Product Image" style="width: 50px; height: 50px;"></td>
+					    <td th:text="${product.name}">Nombre del Producto</td>
+					    <td th:text="${product.price}">$999</td>
+					    <td th:text="${product.category.name}">Categoría del Producto</td>
+					    <td>
+					        <a th:href="@{'/products/edit/' + ${product.id}}" class="btn btn-warning btn-sm">
+					            <span class="fa fa-pencil"></span>
+					        </a>
+					        <a th:href="@{'/products/delete/' + ${product.id}}" class="btn btn-danger btn-sm">
+					            <span class="fa fa-trash"></span>
+					        </a>
+					    </td>
+					</tr>
+		        </tbody>
+		    </table>
+		</div>
+
+	    <div th:if="${merchant == null}">
+	        <h3>Crear Nuevo Merchant</h3>
+	        <form th:action="@{/dashboard/createMerchant}" method="post" enctype="multipart/form-data">
+	            <div class="mb-3">
+	                <label for="merchantName" class="form-label">Nombre de tienda</label>
+	                <input type="text" class="form-control" id="merchantName" name="merchantName" placeholder="Nombre del Merchant" required>
+	            </div>
+	            <div class="mb-3">
+	                <label for="description" class="form-label">Descripción</label>
+	                <textarea class="form-control" id="description" name="description" rows="3" required placeholder="Breve descripcion de tu tienda"></textarea>
+	            </div>
+	            <div class="mb-3">
+	                <label for="image" class="form-label">Imagen</label>
+	                <input class="form-control" type="file" id="image" name="image">
+	            </div>
+	            <button type="submit" class="btn btn-primary">Crear Merchant</button>
+	        </form>
+	    </div>
+		
+		
 	</main>	
 
 </body>

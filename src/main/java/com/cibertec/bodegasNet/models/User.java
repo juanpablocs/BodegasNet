@@ -32,7 +32,7 @@ public class User {
     @OneToOne(mappedBy = "user")
     private Role role;
 
-    @OneToMany(mappedBy = "admin")
+    @OneToMany(mappedBy = "user")
     private List<Merchant> merchants;
     
     public Long getId() {
