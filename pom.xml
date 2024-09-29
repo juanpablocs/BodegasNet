@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cibertec</groupId>
-	<artifactId>BodegasNetSpring</artifactId>
+	<artifactId>NetTechSpring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BodegasNetSpring</name>
+	<name>NetTechSpring</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>

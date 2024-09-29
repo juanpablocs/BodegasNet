@@ -21,6 +21,19 @@
                 </p>
                 <h2 class="product-price" th:text="'S/'+${product.price}"></h2>
                 <button class="btn btn-primary btn-lg">Comprar</button>
+                <div class="card mt-3">
+				  <div class="row g-0">
+				    <div class="col-md-2" style="display:flex;align-items:center;">
+				      <img th:src="@{'/uploads/' + ${merchant.image}}" class="img-fluid rounded-start" alt="...">
+				    </div>
+				    <div class="col-md-10">
+				      <div class="card-body">
+				        <h5 class="card-title" th:text="${merchant.merchantName}">Vendedor X</h5>
+				        <p class="card-text" th:text="${merchant.description}">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
             </div>
         </div>
     </div>
